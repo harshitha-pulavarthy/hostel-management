@@ -1,0 +1,195 @@
+{% extends "layout.html" %}
+
+{% block content %}
+ 
+
+ {% with messages = get_flashed_messages() %}
+  {% if messages %}
+     
+    <script type="text/javascript">
+      var m={{ messages|safe }};
+      for(var i=0;i<m.length;i++)
+      {
+        alert(m[i]);
+      }
+    </script>
+    
+
+
+  {% endif %}
+{% endwith %}
+
+
+
+	       
+	    <h1>Register Page</h1>
+<form class="form-horizontal" action="{{url_for('register')}}" method="POST">
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Rollno:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="rollno" name="rollno"placeholder="Enter Rollno">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Name:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+    </div>
+  </div>
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Email:</label>
+    <div class="col-sm-6">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+    </div>
+  </div>
+
+
+      <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Phno:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="phno" name="phno" placeholder="Enter Phno">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Aadhar no:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="aadharno" name="aadharno" placeholder="Enter Aadhar No:">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Place:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="place" name="place" placeholder="Enter Place">
+    </div>
+  </div>
+  
+  
+  <div class="form-group">
+			  <label class="control-label col-sm-2" for="pwd">College:</label>
+			  <div class="col-sm-6">
+			  <select class="form-control" id="college" name="college">
+			  	 <option value="">--Select--</option>
+			    <option value="AEC">AEC</option>
+			    <option value="ACET">ACET</option>
+			    <option value="ACOE">ACOE</option>
+
+			  </select>
+			</div>
+	</div>
+
+
+  <div class="form-group">
+			  <label class="control-label col-sm-2" for="pwd">Branch:</label>
+			  <div class="col-sm-6">
+			  <select class="form-control" id="branch" name="branch">
+			  	<option value="">--Select--</option>
+			    <option value="CSE">CSE</option>
+			    <option value="ECE">ECE</option>
+			    <option value="IT">IT</option>
+			  </select>
+			</div>
+	</div>
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Section:</label>
+    <div class="col-sm-6">
+    	<div class="radio_inline">
+        <label class="radio-inline"><input type="radio" name="section" value="A">A</label>
+<label class="radio-inline"><input type="radio" name="section" value="B">B</label>
+<label class="radio-inline"><input type="radio" name="section" value="C">C</label>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Gender:</label>
+    <div class="col-sm-6">
+    	<div class="radio_inline">
+        <label class="radio-inline"><input type="radio" name="gender" value="Male">Male</label>
+<label class="radio-inline"><input type="radio" name="gender" value="Female">Female</label>
+<label class="radio-inline"><input type="radio" name="gender" value="Others">Others</label>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="form-group">
+			  <label class="control-label col-sm-2" for="pwd">Hostel Block:</label>
+			  <div class="col-sm-6">
+			  <select class="form-control" id="block" name="block">
+			  	<option value="">--Select--</option>
+			    <option value="BLOCK A">BLOCK A</option>
+			    <option value="BLOCK B">BLOCK B</option>
+			    <option value="BLOCK C">BLOCK C</option>
+
+			  </select>
+			</div>
+	</div>
+
+
+<div class="form-group">
+			  <label class="control-label col-sm-2" for="pwd">Hostel Floor No:</label>
+			  <div class="col-sm-6">
+			  <select class="form-control" id="floor" name="floor">
+			  	<option value="">--Select--</option>
+			    <option value="First Floor">First Floor</option>
+			    <option value="Second Floor">Second Floor</option>
+			    <option value="Third Floor">Third Floor</option>
+
+			  </select>
+			</div>
+	</div>
+
+
+<div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Hostel Room No:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="room" name="room" placeholder="Enter Room No:">
+    </div>
+  </div>
+
+
+<div class="form-group">
+			  <label class="control-label col-sm-2" for="pwd">Bed No:</label>
+			  <div class="col-sm-6">
+			  <select class="form-control" id="bed" name="bed">
+			  	<option value="">--Select--</option>
+			    <option value="BED 1">BED 1</option>
+			    <option value="BED 2">BED 2</option>
+			    <option value="BED 3">BED 3</option>
+
+			  </select>
+			</div>
+	</div>
+
+
+<div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Fee:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="fee" name="fee" placeholder="Enter Fee">
+    </div>
+  </div>
+
+	
+	 <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}
+	

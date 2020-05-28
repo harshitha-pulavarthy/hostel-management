@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+      <h1>Edit Page</h1>
+<form class="form-horizontal" action="{{url_for('update')}}" method="POST">
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Rollno:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="rollno" name="rollno" value="{{data[0][1]}}" placeholder="Enter Rollno">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Name:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="name" name="name" value="{{data[0][2]}}" placeholder="Enter Name">
+    </div>
+  </div>
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Email:</label>
+    <div class="col-sm-6">
+      <input type="email" class="form-control" id="email" name="email" value="{{data[0][3]}}" placeholder="Enter Email">
+    </div>
+  </div>
+
+
+      <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Phno:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="phno" name="phno" value="{{data[0][4]}}" placeholder="Enter Phno">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Aadhar no:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="aadharno" name="aadharno" value="{{data[0][5]}}" placeholder="Enter Aadhar No:">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Place:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="place" name="place" value="{{data[0][6]}}" placeholder="Enter Place">
+    </div>
+  </div>
+  
+  
+  <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">College:</label>
+        <div class="col-sm-6">
+        <select class="form-control" id="college" name="college">
+          <option value="AEC" {% if data[0][7]=="AEC"%} selected 
+          {% endif %}>AEC</option>
+          <option value="ACET" {% if data[0][7]=="ACET"%} selected 
+          {% endif %}>ACET</option>
+          <option value="ACOE" {% if data[0][7]=="ACOE"%} selected 
+          {% endif %}>ACOE</option>
+
+        </select>
+      </div>
+  </div>
+
+
+  <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Branch:</label>
+        <div class="col-sm-6">
+        <select class="form-control" id="branch" name="branch">
+          <option value="CSE" {% if data[0][8]=="CSE"%} selected 
+          {% endif %}>CSE</option>
+          <option value="ECE" {% if data[0][8]=="ECE"%} selected 
+          {% endif %}>ECE</option>
+          <option value="IT" {% if data[0][8]=="IT"%} selected 
+          {% endif %}>IT</option>
+        </select>
+      </div>
+  </div>
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Section:</label>
+    <div class="col-sm-6">
+      <div class="radio_inline">
+        <label class="radio-inline"><input type="radio" name="section" value="A" {% if data[0][9]=="A"%} checked 
+          {% endif %}>A</label>
+        <label class="radio-inline"><input type="radio" name="section" value="B" {% if data[0][9]=="B"%} checked 
+          {% endif %}>B</label>
+        <label class="radio-inline"><input type="radio" name="section" value="C" {% if data[0][9]=="C"%} checked 
+          {% endif %}>C</label>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Gender:</label>
+    <div class="col-sm-6">
+      <div class="radio_inline">
+        <label class="radio-inline"><input type="radio" name="gender" value="Male" {% if data[0][10]=="Male"%} checked 
+          {% endif %}>Male</label>
+        <label class="radio-inline"><input type="radio" name="gender" value="Female" {% if data[0][10]=="Female"%} checked 
+          {% endif %}>Female</label>
+        <label class="radio-inline"><input type="radio" name="gender" value="Others" {% if data[0][10]=="Others"%} checked 
+          {% endif %}>Others</label>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Hostel Block:</label>
+        <div class="col-sm-6">
+        <select class="form-control" id="block" name="block">
+          <option value="BLOCK A" {% if data[0][11]=="BLOCK A"%} selected 
+          {% endif %}>BLOCK A</option>
+          <option value="BLOCK B" {% if data[0][11]=="BLOCK B"%} selected 
+          {% endif %}>BLOCK B</option>
+          <option value="BLOCK C" {% if data[0][11]=="BLOCK C"%} selected 
+          {% endif %}>BLOCK C</option>
+
+        </select>
+      </div>
+  </div>
+
+
+<div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Hostel Floor No:</label>
+        <div class="col-sm-6">
+        <select class="form-control" id="floor" name="floor">
+          <option value="First Floor" {% if data[0][12]=="First Floor"%} selected 
+          {% endif %}>First Floor</option>
+          <option value="Second Floor" {% if data[0][12]=="Second Floor"%} selected 
+          {% endif %}>Second Floor</option>
+          <option value="Third Floor" {% if data[0][12]=="Third Floor"%} selected 
+          {% endif %}>Third Floor</option>
+
+        </select>
+      </div>
+  </div>
+
+
+<div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Hostel Room No:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="room" name="room" value="{{data[0][13]}}" placeholder="Enter Room No:">
+    </div>
+  </div>
+
+
+<div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Bed No:</label>
+        <div class="col-sm-6">
+        <select class="form-control" id="bed" name="bed">
+          <option value="BED 1" {% if data[0][14]=="BED 1"%} selected 
+          {% endif %}>BED 1</option>
+          <option value="BED 2" {% if data[0][14]=="BED 2"%} selected 
+          {% endif %}>BED 2</option>
+          <option value="BED 3" {% if data[0][14]=="BED 3"%} selected 
+          {% endif %}>BED 3</option>
+
+        </select>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Fee:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="fee" name="fee" value={{data[0][15]}} placeholder="Enter Fee">
+    </div>
+  </div>
+
+
+  
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" value={{data[0][0]}} name="id">Submit</button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}
+  

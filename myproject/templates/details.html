@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	       
+	    <h1>Transaction Details</h1>
+
+
+
+	    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                
+                <th>Sno</th>
+                <th>Roll No</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in data %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{d[1]}}</td>
+                <td>{{d[2]}}</td>
+                <td>{{d[3]}}</td>
+                <td>{{d[4]}}</td>
+         
+                
+            </tr>
+            {% endfor %}
+        
+
+        </tbody>
+</table>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+</script>
+
+{% endblock %}
+	

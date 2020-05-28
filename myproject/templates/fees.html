@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	       
+	    <h1>Payment Page</h1>
+<form class="form-horizontal" action="{{url_for('fees')}}" method="POST">
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Rollno:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="rollno" name="rollno"placeholder="Enter Rollno">
+    </div>
+  </div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+
+    </div>
+  </div>
+  
+</form>
+
+{% endblock %}

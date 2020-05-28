@@ -1,0 +1,36 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    body
+    {
+      background-image: url({{ url_for('static', filename='image5.jpg') }})
+    }
+  </style>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+     
+    <script type="text/javascript">
+      var m={{ messages|safe }};
+      for(var i=0;i<m.length;i++)
+      {
+        alert(m[i]);
+      }
+    </script>
+    
+
+
+  {% endif %}
+{% endwith %}
+	       
+	    <h1 style="text-align: center;size:100%; color: red;">HOSTEL MANAGEMENT</h1>
+	    <h2 style="text-align: center;color: blue">Contact Us:-</h2>
+	    <h2 style="text-align: center;color: blue">9999999999</h2>
+	    
+
+{% endblock %}
+	
+	
+
